@@ -23,7 +23,7 @@ else:
     from urllib.parse import quote
 
 
-BASE_TUMBOLIA_URI = 'https://tumbolia-sopel.appspot.com/'
+BASE_TUMBOLIA_URI = 'https://oblique.sopel.chat/'
 
 
 @commands('py')

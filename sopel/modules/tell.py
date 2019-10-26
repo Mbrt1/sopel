@@ -13,7 +13,7 @@ import time
 import threading
 import sys
 
-from sopel.module import commands, nickname_commands, rule, priority, example
+from sopel import module
 from sopel.tools import Identifier, iterkeys
 from sopel.tools.time import get_timezone, format_time
 
@@ -90,9 +90,9 @@ def shutdown(bot):
             pass
 
 
-@commands('tell', 'ask')
-@nickname_commands('tell', 'ask')
-@example('$nickname, tell dgw he broke something again.')
+@module.commands('tell', 'ask')
+@module.nickname_commands('tell', 'ask')
+@module.example('$nickname, tell dgw he broke something again.')
 def f_remind(bot, trigger):
     """Give someone a message the next time they're seen"""
     teller = trigger.nick
@@ -163,8 +163,9 @@ def getReminders(bot, channel, key, tellee):
     return lines
 
 
-@rule('(.*)')
-@priority('low')
+@module.rule('(.*)')
+@module.priority('low')
+@module.unblockable
 def message(bot, trigger):
 
     tellee = trigger.nick

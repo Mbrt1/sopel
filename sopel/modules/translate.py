@@ -15,7 +15,7 @@ import sys
 
 import requests
 
-from sopel.module import rule, commands, priority, example
+from sopel.module import rule, commands, priority, example, unblockable
 from sopel.tools import web
 
 if sys.version_info.major >= 3:
@@ -215,6 +215,7 @@ def mangle(bot, trigger):
 
 @rule('(.*)')
 @priority('low')
+@unblockable
 def collect_mangle_lines(bot, trigger):
     global mangle_lines
     mangle_lines[trigger.sender.lower()] = "%s said '%s'" % (trigger.nick, (trigger.group(0).strip()))

@@ -4,17 +4,6 @@ matrix:
   include:
     - name: "Python 2.7 on Xeial"
       python: 2.7
-    - name: "Python 3.3 on Trusty"
-      python: 3.3
-      dist: trusty  # xenial does not support py3.3
-    - name: "Python 3.4 on Xenial"
-      python: 3.4
-    - name: "Python 3.5 on Xenial"
-      python: 3.5
-    - name: "Python 3.6 on Xenial"
-      python: 3.6
-    - name: "Python 3.7 on Xenial"
-      python: 3.7
 git:
   submodules: false
 branches:
@@ -36,6 +25,7 @@ install:
   - pip install --upgrade "setuptools<=39.2.0"  # last version to support Python 3.3
   - pip install --upgrade -r requirements.txt -r dev-requirements.txt
   - python setup.py develop
+  - python sopel.py
 script:
   - make travis
 env:
@@ -48,7 +38,7 @@ notifications:
       - https://coveralls.io/webhook
 deploy:
   provider: pypi
-  username: dgw
+  username: Arifys
   password:
     secure: U9XLRA5fYRmII/pyJGDIT0BQ4p0zP8yZJtxUSUO9arFKozgYZu0ldvoLjKnzPMPQNCGs+q4f0hNuXgN+u/FgfRPF/Q3wtUj58uIC4JFnn7u2D2pv7RqzZkGi9Hr8+SS7dChlx9bVbhC1Y0md0XlrsT6rbNKKW457Jei05+vpjvg=
   on:

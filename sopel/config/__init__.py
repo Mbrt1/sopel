@@ -20,8 +20,8 @@ The configuration file being::
     host = irc.freenode.org
     use_ssl = true
     port = 6697
-    owner = dgw
-    channels = #sopel
+    owner = Arifys
+    channels = #ays-diskusi
 
 A section can be represented by a subclass of
 :class:`~sopel.config.types.StaticSection`; for example a ``[spam]`` section

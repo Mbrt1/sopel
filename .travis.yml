@@ -2,7 +2,7 @@ dist: xenial  # required for newer (>= 3.7) Python versions
 language: python
 matrix:
   include:
-    - name: "Python 2.7 on Xenial"
+    - name: "Python 2.7 on Xeial"
       python: 2.7
     - name: "Python 3.3 on Trusty"
       python: 3.3
